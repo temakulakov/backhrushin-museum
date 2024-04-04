@@ -1,0 +1,42 @@
+.wrapper {
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  button {
+    color: white;
+    border-color: white;
+    height: 50px;
+    &:hover {
+      background-color: white;
+      color: #52565A;
+    }
+  }
+}
+
+.title {
+  display: flex;
+
+  h1 {
+    color: #B0B1B3;
+    cursor: pointer;
+    margin-right: 25px;
+    transition: color .2s ease-in;
+    &:hover {
+      color: white;
+    }
+  }
+
+
+}
+
+.content {
+  display: flex;
+  overflow-x: scroll;
+
+  h1 {
+    color: white;
+    min-width: 500px;
+  }
+}

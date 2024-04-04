@@ -1,0 +1,42 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  h1 {
+    text-transform: uppercase;
+    margin-bottom: 30px;
+
+  }
+  a {
+    height: 50px;
+    margin: auto 0;
+  }
+}
+
+/* Стили для контента */
+.content {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 540px;
+  margin-bottom: 30px;
+  > div:first-child {
+    border-left: 1px black solid;
+  }
+  > div {
+    border-right: 1px black solid;
+  }
+  > div:last-child {
+    border: none;
+    div  {
+
+    }
+  }
+}
+

@@ -1,0 +1,46 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.titleWrapper {
+  display: flex;
+  cursor: pointer;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  div {
+    display: flex;
+  }
+  button {
+    height: 50px;
+    margin: auto 0;
+  }
+}
+
+.titleElement {
+  margin-right: 1.9rem;
+  color: #B0B1B3;
+  text-transform: uppercase;
+  transition: color 0.25s ease-in-out;
+
+  &:hover {
+    color: #52565A;
+  }
+  &.active {
+    color: #52565A;
+  }
+}
+
+.cardsWrapper {
+  display: flex;
+  width: 100%;
+  overflow-x: scroll;
+  crollbar-width: none; /* Для Firefox */
+  -ms-overflow-style: none;  /* Для Internet Explorer и Edge */
+  margin: 10px 0;
+  &::-webkit-scrollbar {
+    width: 0px; /* Для WebKit (Safari, Chrome и т.д.) */
+    background: transparent; /* Сделать скроллбар прозрачным */
+  }
+}

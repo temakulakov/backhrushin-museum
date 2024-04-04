@@ -1,0 +1,46 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  position: relative;
+  height: 800px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  h1 {
+    margin: 0;
+    color: white;
+
+  }
+  button {
+    height: 50px;
+    color: white;
+    border-color: white;
+    &:hover {
+      color: #52565A;
+      background-color: white;
+    }
+  }
+}
+
+.content {
+  display: flex;
+  overflow-x: scroll;
+  flex-wrap: nowrap;
+  padding-top: 40px;
+  position: absolute;
+  width: 100vw;
+  transform: rotateX(0);
+  &::-webkit-scrollbar {
+    display: none; /* для WebKit (Safari, Chrome и т.д.) */
+  }
+
+
+
+  -ms-overflow-style: none;  /* для IE и Edge */
+  scrollbar-width: none; /* для Firefox */
+  overflow-y: scroll; /* Сохраняет возможность прокрутки */
+}

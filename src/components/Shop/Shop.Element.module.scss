@@ -1,0 +1,32 @@
+.wrapper {
+  //min-height: 295px;
+  //min-width: 195px;
+  text-align: center;
+  margin: 0 20px;
+  cursor: pointer;
+
+
+  .body {
+    width: 192px;
+    height: 246px;
+    background-color: white;
+    display: flex;
+    border-radius: 2px;
+    justify-content: center;
+    align-items: center;
+  }
+  img {
+    width: 70%;
+    max-height: 70%;
+  }
+  h2 {
+    color: white;
+    margin: 0;
+    margin-top: 10px;
+    text-align: center;
+  }
+  p {
+    color: white;
+  }
+
+}

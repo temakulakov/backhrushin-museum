@@ -1,0 +1,40 @@
+.wrapper {
+  flex-grow: 1;
+  //background-color: white;
+  display: flex;
+  color: #52565A;
+  cursor: pointer;
+}
+
+.content {
+  width: 90%;
+  margin: 0 auto;
+
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+}
+
+.imageWrapper {
+  width: 70%;
+  height: 30%;
+  overflow: hidden;
+  display: flex; /* Используем flexbox для выравнивания содержимого */
+  justify-content: center; /* Центрирование содержимого по горизонтали */
+  align-items: center; /* Центрирование содержимого по вертикали */
+
+  img {
+    width: 390px;
+    height: auto;
+  }
+}
+
+.text {
+  h1 {
+    height: fit-content;
+    margin-bottom: 1px;
+    width: 400px
+  }
+}

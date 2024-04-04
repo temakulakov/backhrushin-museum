@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(0deg, #54565a, #54565a 20%, #ffffff 50%);
+}
+
+h1, h2, h3 {
+  font-family: 'TT Nooks', sans-serif;
+  text-transform: uppercase;
+
+  color: #54565A;
+}
+h1 {
+  font-size: 28px;
+  height: 26px;
+}
+
+a {
+  color: white;
+}
+
+h4, h5, h6, p {
+  font-family: 'TT Norms', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #54565A;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-family: 'TT Norms', sans-serif;
+
+}
+
+button {
+  border: 1px solid #54565A;
+  color: #54565A;
+  border-radius: 25px;
+  background: none;
+  cursor: pointer;
+  padding: 10px 30px;
+  transition: 0.4s all;
+  &:hover {
+    background: #54565A;
+    color: white;
+  }
+}
+
+
+@font-face {
+  font-family: 'TT Nooks';
+  src: local('TT Nooks Regular'), local('TTNormsPro-Regular'),
+  url('./static/fonts/TTNooks/TTNooksScript-Bold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Norms';
+  src: local('TT NormsPro Script Bold'), local('TTNormsPro-Regular'),
+  url('./static/fonts/TTNorms/TTNormsPro-Regular.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+

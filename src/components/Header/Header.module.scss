@@ -1,0 +1,86 @@
+.container {
+  position: fixed;
+  z-index: 2;
+  background-color: #9d2235;
+  background-color: rgba(138, 22, 53, 0.69);
+  border-radius: 5px;
+  backdrop-filter: blur(20px);
+
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 1%;
+}
+
+.top {
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  .logoWrapper {
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+  }
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.item {
+  color: white;
+  padding: 10px 0;
+  cursor: pointer;
+  img {
+    padding-left: 4px;
+    width: 1rem;
+  }
+  &:first-child {
+    padding-left: 0;
+  }
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+.btnGroup {
+  display: flex;
+  box-sizing: content-box !important;
+  align-items: center;
+  .btn {
+    border-radius: 5px;
+    //height: -moz-fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    padding: 10px 12px;
+    background-color: transparent;
+    color: white;
+    font-size: 14px;
+    border: 1.2px solid white;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+  }
+  .button {
+    height: 32px;
+    padding: 10px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.16);
+    }
+  }
+}
