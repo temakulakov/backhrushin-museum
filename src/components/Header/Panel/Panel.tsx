@@ -19,101 +19,102 @@ const Panel = ({ panel }: Props) => {
             setActiveElement(panel.link[0]);
         }
     }, [panel]);
-    return <motion.div className={styles.wrapper}
-                       initial={{ opacity: 0, y: 27, width: '95%' }}
-                       animate={{ opacity: 1, y: 33, width: '100%' }}
-                       exit={{ opacity: 0, y: 27, width: '95%' }}
-    >
-        <AnimatePresence>
-            {
-                panel && panel?.link && <motion.div
-                    key={panel.head.title}
+    return <AnimatePresence>
+        {panel && <motion.div className={styles.wrapper}
+                    initial={{opacity: 0, y: 27, width: '95%'}}
+                    animate={{opacity: 1, y: 33, width: '100%'}}
+                    exit={{opacity: 0, y: 27, width: '95%'}}
+        >
+            <AnimatePresence>
+                {
+                    panel?.link && <motion.div
+                        key={panel.head.title}
+                        className={styles.container}
+                    >
+                        <div className={styles.columnFirst}>
+                            <AnimatePresence>
+                                {panel.link.map((item, index) => {
+                                    return <motion.a key={index}
+                                                     initial={{opacity: 0}}
+                                                     animate={{opacity: 1}}
+                                                     exit={{opacity: 0}}
+                                                     href={item.head.src}
+                                                     onMouseEnter={() => {
+                                                         setActiveElement(item);
+                                                         setActiveDescription(item)
+                                                     }}>
+                                        {item.head.title}{item.link &&
+                                        <img style={{transform: 'rotate(-90deg)'}} src={arrow}/>}
+                                    </motion.a>
+                                })}
+                            </AnimatePresence>
+                        </div>
 
-                    className={styles.container}
-                >
-                    <div className={styles.columnFirst}>
+                        {/*<Line background={'white'}/>*/}
+
                         <AnimatePresence>
-                            {panel.link.map((item, index) => {
-                                return <motion.a key={index}
-                                                 initial={{opacity: 0}}
-                                                 animate={{opacity: 1}}
-                                                 exit={{opacity: 0}}
-                                                 href={item.head.src}
-                                                 onMouseEnter={() => {
-                                                     setActiveElement(item);
-                                                     setActiveDescription(item)
-                                                 }}>
-                                    {item.head.title}{item.link &&
-                                    <img style={{transform: 'rotate(-90deg)'}} src={arrow}/>}
-                                </motion.a>
-                            })}
-                        </AnimatePresence>
-                    </div>
-
-                    {/*<Line background={'white'}/>*/}
-
-                    <AnimatePresence>
-                        {
-                            activeElement  && <motion.div
-                                // key={activeElement.head.title}
-                                className={styles.columnSecond}
-                                initial={{opacity: 0, y: 10}}
-                                animate={{opacity: 1, y: 0}}
-                                exit={{opacity: 0, y: 10}}
-                            >
-                                {
-                                    activeElement && activeElement.link && <AnimatePresence>
-                                        {
-                                            activeElement.link.map((item, index) =>
-                                                <a href={item.head.src}
-                                                   key={index}
-                                                   onMouseEnter={() => {
-                                                       // setActiveElement(item);
-                                                       setActiveDescription(item)
-                                                   }}>
-                                                    {item.head.title}</a>
-                                            )
-                                        }
-                                    </AnimatePresence>
-
-                                }
-                            </motion.div>
-                        }
-                    </AnimatePresence>
-
-                    {/*<Line background={'white'}/>*/}
-
-                    <AnimatePresence>
-                        {activeDescription && activeDescription.head && <>
-                            <motion.div
-                                key={activeDescription.head.title}
-                                initial={{opacity: 0, y: 10}}
-                                animate={{opacity: 1, y: 0}}
-                                exit={{opacity: 0, y: 10}}
-                                className={styles.columnLast}
-                            >
-                                {
-                                    activeDescription && <AnimatePresence>
-                                        <div>
-                                            <h1>{activeDescription.head.title}</h1>
-                                            <p>{activeDescription.head.description}</p>
-                                        </div>
-                                        <AnimatePresence>
+                            {
+                                activeElement && <motion.div
+                                    // key={activeElement.head.title}
+                                    className={styles.columnSecond}
+                                    initial={{opacity: 0, y: 10}}
+                                    animate={{opacity: 1, y: 0}}
+                                    exit={{opacity: 0, y: 10}}
+                                >
+                                    {
+                                        activeElement && activeElement.link && <AnimatePresence>
                                             {
-                                                activeDescription.head.src &&
-                                                <img src={activeDescription.head.src} alt={activeDescription.head.title}/>
+                                                activeElement.link.map((item, index) =>
+                                                    <a href={item.head.src}
+                                                       key={index}
+                                                       onMouseEnter={() => {
+                                                           // setActiveElement(item);
+                                                           setActiveDescription(item)
+                                                       }}>
+                                                        {item.head.title}</a>
+                                                )
                                             }
                                         </AnimatePresence>
-                                    </AnimatePresence>
-                                }
-                            </motion.div>
-                        </>}
-                    </AnimatePresence>
-                </motion.div>
-            }
 
-        </AnimatePresence>
-    </motion.div>
+                                    }
+                                </motion.div>
+                            }
+                        </AnimatePresence>
+
+                        {/*<Line background={'white'}/>*/}
+
+                        <AnimatePresence>
+                            {activeDescription && activeDescription.head && <>
+                                <motion.div
+                                    key={activeDescription.head.title}
+                                    initial={{opacity: 0, y: 10}}
+                                    animate={{opacity: 1, y: 0}}
+                                    exit={{opacity: 0, y: 10}}
+                                    className={styles.columnLast}
+                                >
+                                    {
+                                        activeDescription && <AnimatePresence>
+                                            <div>
+                                                <h1>{activeDescription.head.title}</h1>
+                                                <p>{activeDescription.head.description}</p>
+                                            </div>
+                                            <AnimatePresence>
+                                                {
+                                                    activeDescription.head.src &&
+                                                    <img src={activeDescription.head.src} alt={activeDescription.head.title}/>
+                                                }
+                                            </AnimatePresence>
+                                        </AnimatePresence>
+                                    }
+                                </motion.div>
+                            </>}
+                        </AnimatePresence>
+                    </motion.div>
+                }
+
+            </AnimatePresence>
+        </motion.div>}
+    </AnimatePresence>
 };
 
 export default Panel;

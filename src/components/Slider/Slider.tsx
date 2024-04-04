@@ -243,7 +243,7 @@ const Slider = () => {
         className={styles.root}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
-        animate={{height: location.pathname === '/' ? '70vh' : '40vh'}}
+        animate={{height: location.pathname === '/' ? '85vh' : '40vh'}}
     >
         <AnimatePresence>
             {
@@ -309,7 +309,7 @@ const Slider = () => {
         }
 
         <motion.div className={styles.imageContainer}
-                    animate={{height: location.pathname === '/' ? '70vh' : '40vh', x: location.pathname === '/' ? '1%' : '80%'}}
+                    animate={{height: location.pathname === '/' ? '85vh' : '40vh', x: location.pathname === '/' ? '1%' : '80%'}}
         >
             <motion.img
                 draggable="false"
